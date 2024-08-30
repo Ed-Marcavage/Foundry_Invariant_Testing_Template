@@ -7,4 +7,11 @@ contract Handler is Test {
     constructor() {
         console2.log("Handler constructor");
     }
+
+    function getRandomAddress(
+        uint256 seed,
+        address[] memory addrArray
+    ) private pure returns (address) {
+        return addrArray[seed % addrArray.length];
+    }
 }
